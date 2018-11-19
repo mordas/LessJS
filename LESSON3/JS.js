@@ -34,22 +34,48 @@ function chooseExpentions() {
 };
 chooseExpentions();
 
+// 3) Создать функцию для определения необязательных расходов (chooseOptExpenses):
+
+// Необходимо 3 раза спросить у пользователя “Статья необязательных расходов?”
+
+// Записать ответы в объект optionalExpenses в формате Номер - Ответ.
+
+// optionalExpenses: {
+// 1 : “ответ на вопрос”
+// }
+
+function chooseOptExpentions() {
+    for (let i = 1; i < 4; i++) {
+        let a = prompt('Введите необязательную статью расходов в этом месяце', '');
+        
+            appData.optionalExpenses[i] = a;
+    }    
+};
+chooseOptExpentions();
 
 
+// 1) Оформить расчет дневного бюджета  и вывод на экран этого значения как одну функцию (detectDayBudget)
 
+function detectDayBudget(){
 appData.moneyPerDay = (appData.budjet / 30).toFixed();
-
 alert("Ваш бюджет на сегодня: " + appData.moneyPerDay);
-
-if (appData.moneyPerDay < 100) {
-    console.log('Минимум');
-} else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
-    console.log('Нормально');
-} else if (appData.moneyPerDay < 1000) {
-    console.log('Богато');
-} else {
-    console.log('Ошибка');
 }
+detectDayBudget();
+
+// 2) Оформить блок кода с расчетом уровня достатка как отдельную функцию (detectLevel)
+
+function detectLevel(){
+    if (appData.moneyPerDay < 100) {
+        console.log('Минимум');
+    } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+        console.log('Нормально');
+    } else if (appData.moneyPerDay < 1000) {
+        console.log('Богато');
+    } else {
+        console.log('Ошибка');
+    }
+}
+detectLevel();
 
 function checkSavings(){
     if (appData.savings == true){
