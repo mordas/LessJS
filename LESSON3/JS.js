@@ -18,6 +18,7 @@ let appData = {
     income: [],
     savings: true
 }
+////12
 
 function chooseExpentions() {
     for (let i = 0; i < 2; i++) {
