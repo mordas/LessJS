@@ -75,4 +75,14 @@ let appData = {
     }
     appData.income = items.split(', ');
     appData.income.push(prompt('Ничего не забыл?'));
-    appData.income.sort();}}
+    appData.income.sort();
+    appData.income.forEach(function(item,i) {
+        alert("Способы дополнительного заработка " + ++i + " " +  item);
+    });
+},
+    writeProp: function(){
+        for (key in appData){
+            alert("Наша программа включает в себя " + key +' ' + appData[key]);
+        }
+    }
+}
